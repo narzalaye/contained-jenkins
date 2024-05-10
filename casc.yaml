@@ -1,0 +1,32 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: ${JENKINS_ADMIN_ID}
+         password: ${JENKINS_ADMIN_PASSWORD}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "USER:Overall/Administer:admin"
+        - "GROUP:Overall/Read:authenticated"
+security:
+  queueItemAuthenticator:
+    authenticators:
+    - global:
+        strategy: triggeringUsersAuthorizationStrategy
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+unclassified:
+  location:
+    url: http://localhost:8080/
+
+# https://github.com/jenkinsci/configuration-as-code-plugin/blob/466163288f86adc13415a1287525141a44e3b87e/docs/seed-jobs.md
+jobs:
+  - file: "/data/jenkins/seed_job.groovy"
+
+tool:
+  git:
+    installations:
+    - home: "/usr/bin/git"
+      name: "Default"
