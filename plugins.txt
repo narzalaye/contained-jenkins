@@ -5,10 +5,12 @@ build-timeout:latest
 cloudbees-folder:latest
 configuration-as-code:latest
 credentials-binding:latest
+docker-plugin:latest
 email-ext:latest
 git:latest
 github-branch-source:latest
 gradle:latest
+jdk-tool
 mailer:latest
 matrix-auth:latest
 pam-auth:latest

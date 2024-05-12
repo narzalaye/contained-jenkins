@@ -23,10 +23,40 @@ unclassified:
 
 # https://github.com/jenkinsci/configuration-as-code-plugin/blob/466163288f86adc13415a1287525141a44e3b87e/docs/seed-jobs.md
 jobs:
-  - file: "/data/jenkins/seed_job.groovy"
+  - script: >
+      pipelineJob('maven-pipeline-version-controlled') {
+          definition {
+              triggers {
+                  cron('H/5 * * * *')
+              }
+              cpsScm {
+                  scm {
+                    git {
+                        remote { url 'https://github.com/narzalaye/maven-build-with-jenkins-pipeline.git' }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+                  scriptPath 'src/ci/Jenkinsfile'
+              }
+          }
+      }
 
 tool:
   git:
     installations:
     - home: "/usr/bin/git"
       name: "Default"
+  jdk:
+    installations:
+      - name: "open-jdk8"
+        home: "/opt/java/openjdk"
+  
+  maven:
+    installations:
+      - name: "Maven 3"
+        properties:
+          - installSource:
+              installers:
+                - maven:
+                    id: "3.5.4"
