@@ -29,27 +29,27 @@ The Docker build uses Jenkins base image, it then install Jenkins plugin using t
 4) CLI script - written in bash
 
 ## Test run (or: it works on my computer)
-1) Execution of the script to start Jenkins server
-![script log](https://github.com/narzalaye/contained-jenkins/blob/master/img/1_script_rin_log.png?raw=true)
-The log shows the usage of scasc
+1) Execution of the script to start Jenkins server  <br>
+![script log](https://github.com/narzalaye/contained-jenkins/blob/main/img/1_script_rin_log.png?raw=true)
+The log shows the usage of scasc  <br>    <br>
 
-2) Jenkins Dashboard
-![jenkins dashboard](https://github.com/narzalaye/contained-jenkins/blob/master/img/2_jenkins_dashboard_showing_build.png?raw=true)
-The screenshot shows the dashobard with the successful build
+2) Jenkins Dashboard  <br>
+![jenkins dashboard](https://github.com/narzalaye/contained-jenkins/blob/main/img/2_jenkins_dashboard_showing_build.png?raw=true)
+The screenshot shows the dashobard with the successful build  <br>    <br>
 
-3) Jenkins Build screen
-![jenkins dashboard](https://github.com/narzalaye/contained-jenkins/blob/master/img/3_jenkins_build_with_test_results_and_artifacts.png?raw=true)
-The screenshot shows the build with test results and artifacts.
+3) Jenkins Build screen  <br>
+![jenkins dashboard](https://github.com/narzalaye/contained-jenkins/blob/main/img/3_jenkins_build_with_test_results_and_artifacts.png?raw=true)
+The screenshot shows the build with test results and artifacts.  <br>    <br>
 
 ## Resources
-I followed this guide:
-source: https://www.digitalocean.com/community/tutorials/how-to-automate-jenkins-setup-with-docker-and-jenkins-configuration-as-code
-I removed the ldap plugin according to this:
-https://github.com/jenkinsci/configuration-as-code-plugin/issues/1976
-Then I followed this guide:
-http://eriklievaart.com/cheat/applications/jenkins/jcasc.html
-I forked the Maven pipeline project from:
-https://www.thinkcode.se/blog/2019/12/23/jenkins-configuration-as-code
+I followed this guide:  <br>
+source: https://www.digitalocean.com/community/tutorials/how-to-automate-jenkins-setup-with-docker-and-jenkins-configuration-as-code  <br>
+I removed the ldap plugin according to this:  <br>
+https://github.com/jenkinsci/configuration-as-code-plugin/issues/1976  <br>
+Then I followed this guide:  <br>
+http://eriklievaart.com/cheat/applications/jenkins/jcasc.html  <br>
+I forked the Maven pipeline project from:  <br>
+https://www.thinkcode.se/blog/2019/12/23/jenkins-configuration-as-code  <br>
 https://github.com/tsundberg/maven-build-with-jenkins-pipeline/tree/master
 
 
